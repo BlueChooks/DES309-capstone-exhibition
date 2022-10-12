@@ -1,0 +1,32 @@
+.split {
+    display: flex;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    letter-spacing: .01rem;
+    width: 100vw;
+    border: 1px solid black;
+}
+
+.split-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 300px;
+    border: 1px solid black;
+}
+
+.split-container > span {
+    /* font-size: var(--splitFontSize); */
+    text-align: justify;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.split-container > span:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

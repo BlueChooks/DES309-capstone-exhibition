@@ -1,0 +1,87 @@
+.bg {
+    touch-action: none;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(50px);
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
+}
+
+.bg > div {
+    position: absolute;
+    border-radius: 20%;
+}
+
+.bg > div:nth-of-type(1) {
+    background-color: var(--lightish);
+    top: -100%;
+    bottom: 10%;
+    left: -100%;
+    right: 50%;
+}
+
+.bg > div:nth-of-type(2) {
+    background-color: var(--bright);
+    top: 50%;
+    bottom: -100%;
+    left: 60%;
+    right: -100%;
+}
+
+.bg > div:nth-of-type(3) {
+    background-color: var(--blueish);
+    top: 70%;
+    bottom: -100%;
+    left: 10%;
+    right: 30%;
+}
+
+.bg > div:nth-of-type(4) {
+    background-color: var(--dark);
+    top: -100%;
+    bottom: 70%;
+    left: 70%;
+    right: -100%;
+    border-radius: 30%;
+}
+
+.bg > div:nth-of-type(5) {
+    background-color: var(--forest);
+    top: 30%;
+    bottom: 30%;
+    left: 30%;
+    right: 30%;
+    border-radius: 30%;
+}
+
+.grad {
+    touch-action: none;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grad > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grad > div:first-of-type {
+    background: linear-gradient(315deg, var(--bright) 0%, var(--forest-trans) 40%, var(--forest-trans) 60%, var(--lightish) 100%);
+}
+
+.grad > div:last-of-type {
+    background: linear-gradient(225deg, var(--dark) 0%, var(--forest-trans) 40%, var(--forest-trans) 60%, var(--blueish) 100%);
+}

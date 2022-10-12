@@ -1,0 +1,44 @@
+:root {
+    --lightish: #9fd189;
+    --blueish: #74cccd;
+    --bright: #2aac5d;
+    --forest: #488264;
+    --forest-trans: rgba(42, 172, 93, 0);
+    --dark: #2c2e35;
+
+    --grad: -135deg, var(--dark) 0%, var(--forest) 25%, var(--bright) 50%, var(--lightish) 75%, var(--blueish) 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+}
+
+body {
+    background-attachment: fixed;
+    background-color: var(--forest);
+    position: relative;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    /* border: 3px solid white; */
+}
+
+.fullscreen {
+    min-height: 100vh;
+    width: 100vw;
+}
