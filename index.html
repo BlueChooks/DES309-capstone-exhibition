@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./bg.css" />
         <link rel="stylesheet" href="./split.css" />
     </head>
-    <!-- <body class="grad"> -->
+    <!-- file:///C:/Users/User/Downloads/DES309%20AP%20Style%20Guide.pdf -->
     <body>
         <div class="grad">
             <div></div>
@@ -29,34 +29,53 @@
                         <span>ALTERNATIVE</span>
                         <span>PERSPECTIVES</span>
                     </div>
+                    <div class="split-container">
+                        <span>ALTERNATIVE</span>
+                        <span>PERSPECTIVES</span>
+                    </div>
                 </h1>
+                <svg-img opt="logotype"></svg-img>
             </section>
             <section id="about" class="fullscreen">
-                <h1>About</h1>
+                <h1 class="split">
+                    <div class="split-container">
+                        <span>About</span>
+                    </div>
+                    <div class="split-container">
+                        <span>About</span>
+                    </div>
+                </h1>
             </section>
             <section id="details" class="fullscreen">
-                <h1>Details</h1>
+                <h1 class="split">
+                    <div class="split-container">
+                        <span>Details</span>
+                    </div>
+                    <div class="split-container">
+                        <span>Details</span>
+                    </div>
+                </h1>
             </section>
             <section id="links" class="fullscreen">
-                <h1>Links</h1>
+                <h1 class="split">
+                    <div class="split-container">
+                        <span>Links</span>
+                    </div>
+                    <div class="split-container">
+                        <span>Links</span>
+                    </div>
+                </h1>
             </section>
             <section id="end" class="fullscreen">
                 <h1>End</h1>
             </section>
         </main>
-        <!-- <script>
-            let splitComponents = document.querySelectorAll('.split-container > span');
+        <script src="./components/svg-img.js"></script>
+        <script>
+            document.querySelector('svg-img[opt=logotype]').addEventListener('mouseover', () => {
+                console.log(document.querySelectorAll('svg-img[opt=logotype] .logotype-odd'));
 
-            splitComponents.forEach(span => {
-                // console.log(span.innerText.length, span.innerText);
-                // console.log(span.parentElement.clientWidth);
-                // console.log((span.parentElement.clientWidth / 100) * span.innerText.length);
-                let length = span.innerText.length;
-                let clientWidth = span.parentElement.clientWidth;
-                // let newFontSize = (span.parentElement.clientWidth / 100) * span.innerText.length;
-                let newFontSize = (100 / length) * clientWidth;
-                span.style.setProperty('--splitFontSize', `${newFontSize}px`);
             });
-        </script> -->
+        </script>
     </body>
 </html>

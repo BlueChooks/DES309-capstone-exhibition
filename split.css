@@ -1,32 +1,82 @@
-.split {
+@media DISABLED {
+    .split {
+        --clipOffset: 0px;
+        --skewOffsetY: 2px;
+        --skewOffsetX: 50px;
+    
+        display: flex;
+        justify-content: center;
+        font-family: 'Arial', sans-serif;
+        font-weight: 900;
+        letter-spacing: .01rem;
+        width: 100vw;
+        border: 1px solid black;
+        position: relative;
+    }
+    
+    .split > .split-container {
+        display: flex;
+        flex-direction: column;
+        /* width: 50%; */
+        /* min-width: 300px; */
+        /* border: 1px solid black; */
+        position: relative;
+    }
+    
+    .split > .split-container:first-of-type {
+        top: var(--skewOffset);
+        left: var(--skewOffsetX);
+        /* left: 100px; */
+        /* clip-path: polygon(0 0, 60% 0, 35% 100%, 0 100%); */
+        clip-path: polygon(0 0, calc(60% + var(--clipOffset)) 0, calc(35% - var(--clipOffset)) 100%, 0 100%);
+    }
+    
+    .split > .split-container:last-of-type {
+        bottom: var(--skewOffsetY);
+        right: var(--skewOffsetX);
+        color: white;
+        /* clip-path: polygon(100% 0, 60% 0, 35% 100%, 100% 100%); */
+        /* clip-path: polygon(0 0, calc(60% + var(--clipOffset)) 0, calc(35% + var(--clipOffset)) 100%, 0 100%); */
+        clip-path: polygon(100% 0, calc(60% + var(--clipOffset)) 0, calc(35% - var(--clipOffset)) 100%, 100% 100%);
+    }
+    
+    .split-container > span {
+        /* border: 1px solid black; */
+        /* background-color: red; */
+        /* font-size: var(--splitFontSize); */
+        text-align: center;
+        text-transform: uppercase;
+        /* width: 100%; */
+    }
+    
+    /* 
+    try hardcoding it - (50% +- 50px) - and see how it feels at different sizes
+    */
+}
+
+svg-img {
+    position: relative;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    font-family: 'Arial', sans-serif;
-    font-weight: 900;
-    letter-spacing: .01rem;
-    width: 100vw;
-    border: 1px solid black;
 }
 
-.split-container {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    min-width: 300px;
-    border: 1px solid black;
+svg-img * {
+    transition: .2s ease-in-out;
 }
 
-.split-container > span {
-    /* font-size: var(--splitFontSize); */
-    text-align: justify;
-    text-transform: uppercase;
-    width: 100%;
+svg-img[opt=logotype] {
+    width: 70%;
+    max-width: 500px;
 }
 
-.split-container > span:before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+svg-img[opt=logotype]:hover .logotype-odd {
+    /* position: relative; */
+    /* stroke: red; */
+    transform: translate(10px, -10px);
+}
+
+svg-img[opt=logotype]:hover .logotype-even {
+    /* position: relative; */
+    /* stroke: red; */
+    transform: translate(-10px, 10px);
 }

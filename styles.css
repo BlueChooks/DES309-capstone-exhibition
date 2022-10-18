@@ -36,6 +36,8 @@ section {
     scroll-snap-align: start;
     scroll-snap-stop: normal;
     /* border: 3px solid white; */
+    overflow-x: hidden;
+    padding-top: 10px;
 }
 
 .fullscreen {
