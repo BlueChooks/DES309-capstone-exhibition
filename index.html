@@ -5,6 +5,7 @@
         <meta name="description" content="The 2022 University of the Sunshine Coast Design Exhibition" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./navbar.css" />
         <link rel="stylesheet" href="./bg.css" />
         <link rel="stylesheet" href="./split.css" />
     </head>
@@ -14,6 +15,7 @@
             <div></div>
             <div></div>
         </div>
+
         <div class="bg">
             <div></div>
             <div></div>
@@ -22,59 +24,56 @@
             <div></div>
         </div>
 
+        <nav>
+            <!-- <long-content opt="logo"></long-content> -->
+            <a href="#hero" class="exclude nav-logo"><long-content opt="logo"></long-content></a>
+            <button id="menu-toggler"><long-content opt="logo"></long-content></button>
+            <div>
+                <a href="#about">About</a>
+                <a href="#details">Details</a>
+                <a href="#links">Links</a>
+            </div>
+        </nav>
+
         <main>
             <section id="hero" class="fullscreen">
-                <h1 class="split">
+                <!-- <h1 class="split">
                     <div class="split-container">
                         <span>ALTERNATIVE</span>
                         <span>PERSPECTIVES</span>
                     </div>
-                    <div class="split-container">
-                        <span>ALTERNATIVE</span>
-                        <span>PERSPECTIVES</span>
-                    </div>
-                </h1>
-                <svg-img opt="logotype"></svg-img>
+                </h1> -->
+                <long-content opt="logotype"></long-content>
             </section>
             <section id="about" class="fullscreen">
-                <h1 class="split">
-                    <div class="split-container">
-                        <span>About</span>
-                    </div>
-                    <div class="split-container">
-                        <span>About</span>
-                    </div>
-                </h1>
+                <h1 class="split">About</h1>
+                <div class="section-content">
+                    <long-content opt="about"></long-content>
+                </div>
             </section>
             <section id="details" class="fullscreen">
-                <h1 class="split">
-                    <div class="split-container">
-                        <span>Details</span>
-                    </div>
-                    <div class="split-container">
-                        <span>Details</span>
-                    </div>
-                </h1>
+                <h1 class="split">Details</h1>
             </section>
             <section id="links" class="fullscreen">
-                <h1 class="split">
-                    <div class="split-container">
-                        <span>Links</span>
-                    </div>
-                    <div class="split-container">
-                        <span>Links</span>
-                    </div>
-                </h1>
+                <h1 class="split">Links </h1>
             </section>
             <section id="end" class="fullscreen">
                 <h1>End</h1>
             </section>
         </main>
-        <script src="./components/svg-img.js"></script>
+        <script src="./components/long-content.js"></script>
         <script>
-            document.querySelector('svg-img[opt=logotype]').addEventListener('mouseover', () => {
-                console.log(document.querySelectorAll('svg-img[opt=logotype] .logotype-odd'));
+            let navClasses = document.querySelector('nav').classList;
 
+            document.querySelector('#menu-toggler').addEventListener('click', () => {
+                console.log(navClasses.contains('toggled'));
+                navClasses.contains('toggled') ? navClasses.remove('toggled') : navClasses.add('toggled');
+            });
+
+            document.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    navClasses.remove('toggled');
+                })
             });
         </script>
     </body>

@@ -7,6 +7,11 @@
     --dark: #2c2e35;
 
     --grad: -135deg, var(--dark) 0%, var(--forest) 25%, var(--bright) 50%, var(--lightish) 75%, var(--blueish) 100%;
+
+    --togglerSize: 50px;
+    --navInnerWidth: 50%;
+
+    --stdMargin: 10px;
 }
 
 * {
@@ -20,6 +25,7 @@ body {
     background-attachment: fixed;
     background-color: var(--forest);
     position: relative;
+    display: flex;
 }
 
 main {
@@ -42,5 +48,33 @@ section {
 
 .fullscreen {
     min-height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
+}
+
+h1, nav a {
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-content {
+    display: flex;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Century Gothic';
+    font-size: large;
+    /* font-weight: 600; */
+    color: #fff;
+
 }

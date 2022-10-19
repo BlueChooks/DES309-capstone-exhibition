@@ -1,0 +1,77 @@
+nav {
+    --linkCol: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 20%;
+    min-width: 200px;
+    border-right: solid 1px #fff;
+    /* padding-top: 1%; */
+    transition: .4s ease-in-out;
+}
+
+.nav-logo {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(var(--stdMargin) * 2);
+    display: flex;
+    width: var(--navInnerWidth);
+}
+
+nav > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: var(--navInnerWidth);
+}
+
+nav a:not(.exclude) {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    color: var(--linkCol);
+    border-left: 4px solid var(--linkCol);
+    padding-left: var(--stdMargin);
+    line-height: .95em;
+    transition: .1s;
+}
+
+nav a:not(.exclude):hover {
+    padding-left: calc(var(--stdMargin) * 2);
+    --linkCol: #000;
+}
+
+#menu-toggler {
+    display: none;
+    position: absolute;
+    right: calc(0px - var(--togglerSize) - var(--stdMargin));
+    top: var(--stdMargin);
+    background: none;
+    border: none;
+}
+
+#menu-toggler svg {
+    width: var(--togglerSize);
+}
+
+@media (orientation: portrait) {
+    nav {
+        --linkCol: #000;
+        width: 80%;
+        height: 100%;
+        position: absolute;
+        left: -80%;
+        background-color: rgb(255, 255, 255, .95);
+        z-index: 100;
+    }
+
+    nav.toggled {
+        left: 0px;
+    }
+
+    #menu-toggler {
+        display: block;
+    }
+}
