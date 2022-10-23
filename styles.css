@@ -1,3 +1,4 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
 :root {
     --lightish: #9fd189;
     --blueish: #74cccd;
@@ -36,6 +37,7 @@ main {
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
     z-index: 10;
+    gap: 50vh;
 }
 
 section {
@@ -44,6 +46,9 @@ section {
     /* border: 3px solid white; */
     overflow-x: hidden;
     padding-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .fullscreen {
@@ -61,20 +66,88 @@ h1, nav a {
 h1 {
     text-align: center;
     color: #fff;
+    margin: 5%;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 a {
     text-decoration: none;
 }
 
+p {
+    margin-top: 1em;
+}
+
 .section-content {
     display: flex;
-    text-align: center;
+    align-items: center;
+    gap: 10%;
+    flex-grow: 1;
+    text-align: left;
+    line-height: 1.4em;
     padding-left: 10%;
     padding-right: 10%;
+    
     font-family: 'Century Gothic';
-    font-size: large;
+    font-size: x-large;
     /* font-weight: 600; */
     color: #fff;
+}
 
+#hero long-content[opt=logo] {
+    width: 40%;
+}
+
+#hero .section-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+}
+
+long-content[opt=intro] {
+    text-align: center;
+    line-height: 1.4em;
+}
+
+.nav-fit {
+    font-size: large;
+}
+
+/* .about-text > span {
+    color:#2c2e35;
+} */
+
+.important {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.label {
+    font-weight: bold;
+}
+
+long-content[opt=about] {
+    font-size: large;
+}
+
+long-content[opt=about] p {
+    /* margin-top: 1em; */
+    /* text-align: left; */
+}
+
+@media (orientation: portrait) {
+    .section-content {
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #hero long-content[opt=logo] {
+        width: 95%;
+    }
 }

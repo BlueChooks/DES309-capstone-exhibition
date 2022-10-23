@@ -129,9 +129,18 @@ class LongContent extends HTMLElement {
                 `;
                 break;
 
-            case 'about':
-                this.innerHTML = '<p>Alternative perspectives focuses on difference, embracing individual opinions, views and personal connection for both the creator and the viewer. To understand the depths of reason, the viewer has the ultimate freedom to decide on meaning and to develop personal connection - or not - to the subject.</p>';
+            case 'intro':
+                this.innerHTML = '<p class="ap-text"><span>Alternative Perspectives</span> focuses on difference, embracing individual opinions, views and personal connection for both the creator and the viewer. To understand the depths of reason, the viewer has the ultimate freedom to decide on meaning and to develop personal connection - or not - to the subject.</p>';
                 break;
+            
+            case 'about':
+                this.innerHTML = `
+                    <p>Please join us for the opening of Alternative Perspectives: UniSC Design 2022 featuring work from students across the design program.</p>
+                    <p>The show includes .... augmented reality design, illustrations, projections, interactive media, photography and games in an immersive exhibition showcasing the work of over 50 design students.</p>
+                    <p>Design at UniSC is an interdisciplinary program with dynamic pathways that encourage students to discover their creativity and develop critical thinking through experimentation in an inclusive and exploratory environment. Through project-based learning and collaborations, students discover the increasingly important role design plays in the world, with opportunities to specialise in interactive media, digital culture, game design or visual communication. This versatile interdisciplinary program equips students with theoretical knowledge, creative skills, cultural awareness and critical thinking to imagine and shape a future that is changing rapidly by design.</p>
+                    <p>The opening event will commence at 6pm and will feature a Welcome to Country with Lyndon Davis, outdoor projections and the announcement of the 2022 Gerard Mills Memorial Prize for Wildlife Photography.</p>
+                    <p class="important">Please note an RSVP is essential for this event.</p>
+                    `;
         }
     }
 } customElements.define('long-content', LongContent);

@@ -56,7 +56,7 @@
 
 long-content[opt=logotype] {
     position: relative;
-    margin: auto;
+    /* margin: auto; */
     display: flex;
 }
 
