@@ -56,6 +56,12 @@ nav a:not(.exclude):hover {
     width: var(--togglerSize);
 }
 
+nav long-content {
+    display: block;
+    height: auto;
+    width: 95%;
+}
+
 @media (orientation: portrait) {
     nav {
         --linkCol: #000;
