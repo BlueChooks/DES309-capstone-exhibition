@@ -14,6 +14,10 @@
     --navInnerWidth: 50%;
 
     --stdMargin: 10px;
+    --stdTrans: .4s ease-in-out;
+
+    --display: Arial, sans-serif;
+    --body: 'Century Gothic', 'Mulish', sans-serif;
 }
 
 * {
@@ -56,7 +60,7 @@ section {
 }
 
 h1, nav a {
-    font-family: Arial, sans-serif;
+    font-family: var(--display);
     font-weight: 900;
     font-size: xx-large;
     text-transform: uppercase;
@@ -89,7 +93,7 @@ p {
     padding-left: 10%;
     padding-right: 10%;
     
-    font-family: 'Century Gothic', 'Mulish', sans-serif;
+    font-family: var(--body);
     font-size: x-large;
     font-weight: 200;
     color: #fff;
@@ -114,10 +118,6 @@ long-content[opt=intro] {
     font-size: large;
 }
 
-/* .about-text > span {
-    color:#2c2e35;
-} */
-
 .important {
     text-decoration: underline;
     font-weight: bold;
@@ -135,14 +135,55 @@ long-content[opt=about] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--stdMargin);
+    /* gap: var(--stdMargin); */
+    gap: 5vh;
 }
 
-.btn-link, .social-media {
-    background-color: #9fd189;
+.btn-link {
+    --btnLinkCol: #fff;
+    position: relative;
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--btnLinkCol);
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out;
+}
+
+.btn-link::before, .btn-link::after {
+    position: absolute;
+    content: '';
     display: block;
-    border-radius: 50px;
-    padding: var(--stdMargin);
+    width: 20%;
+    /* height: 5%;
+    background-color: var(--btnLinkCol); */
+    transition: .2s ease-in-out;
+
+    height: 100%;
+}
+
+.btn-link::before {
+    left: 0;
+    border-bottom: 3px solid var(--btnLinkCol);
+    border-right: 3px solid var(--btnLinkCol);
+}
+
+.btn-link::after {
+    right: 0;
+    border-top: 3px solid var(--btnLinkCol);
+    border-left: 3px solid var(--btnLinkCol);
+}
+
+.btn-link:hover {
+    --btnLinkCol: #000;
+    width: 90%;
+}
+
+.btn-link:hover::before, .btn-link:hover::after {
+    width: 25%;
 }
 
 @media (orientation: portrait) {
